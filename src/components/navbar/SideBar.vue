@@ -50,10 +50,10 @@
                     </a>
                 </li>
                 <li>
-                    <RouterLink to="/login" class="flex btn  btn-primary  ">
+                    <button @click="logout" class="flex btn  btn-primary  ">
                         <font-awesome-icon :icon="['fas', 'right-from-bracket']" />
                         <span class="flex-1 ms-3 whitespace-nowrap">Cerrar Sesión</span>
-                    </RouterLink>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -61,5 +61,12 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+const logout = () => {
+    //TODO logica para cerrar sesion
+    router.push("/login")
+}
 
 </script>

@@ -23,7 +23,7 @@
                             Perfil
                         </a> -->
                     </li>
-                    <li><a>Cerrar Sesión</a></li>
+                    <li><button @click="logout">Cerrar Sesión</button></li>
                 </ul>
             </div>
         </div>
@@ -35,6 +35,14 @@ import { ref } from 'vue';
 
 const props = defineProps(['title'])
 const username = ref("mancha")
+
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+const logout = () => {
+    //TODO logica para cerrar sesion
+    router.push("/login")
+}
 </script>
 
 <style scoped>
