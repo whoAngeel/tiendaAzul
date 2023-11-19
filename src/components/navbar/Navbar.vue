@@ -32,11 +32,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'
 
 const props = defineProps(['title'])
 const username = ref("mancha")
 
-import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const logout = () => {
