@@ -11,7 +11,13 @@
 </template>
 
 <script setup>
-import Navbar from '../components/navbar/Navbar.vue';
 import SideBar from '../components/navbar/SideBar.vue';
+import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
+const router = useRouter()
+
+onMounted(() => {
+    router.push('/inicio')
+})
 
 </script>
