@@ -11,17 +11,22 @@ export default {
     daisyui: {
         themes: [{
             "tiendazul": {
-                "primary": "#F9B572",
-                "secondary": "#A7D397",
-                "accent": "#64CCC5",
+
+            "primary": "#27374D",
+
+            "secondary": "#526D82",
+
+            "accent": "#9DB2BF",
+
                 "neutral": "#16171d",
                 "base-100": "#FAF8ED",
                 "info": "#80B3FF",
                 "success": "#5cbc5f",
                 "warning": "#ffcc00",
-                "error": "#fb4b71",
-            },
-        },],
+
+            "error": "#27374D",
+            }
+        }],
     }
 
 }
