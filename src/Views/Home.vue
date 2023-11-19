@@ -1,6 +1,6 @@
 <template>
     <!-- <Navbar title="Home" /> -->
-    <SideBar />
+    <!-- <SideBar /> -->
     <div class="w-screen">
         <SideBar class="w-1/6" />
 
