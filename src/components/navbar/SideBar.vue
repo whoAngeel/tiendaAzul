@@ -51,11 +51,7 @@
                 </li>
                 <li>
                     <RouterLink to="/login" class="flex btn  btn-primary  ">
-                        <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
-                        </svg>
+                        <font-awesome-icon :icon="['fas', 'right-from-bracket']" />
                         <span class="flex-1 ms-3 whitespace-nowrap">Cerrar Sesión</span>
                     </RouterLink>
                 </li>
