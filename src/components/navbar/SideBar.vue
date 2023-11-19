@@ -1,25 +1,14 @@
 <template>
-    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-56 h-screen  bg-primary" aria-label="Sidebar">
+    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40  h-screen  bg-primary" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto">
-            <a href="#" class="flex items-center ps-2.5 mb-5 text-primary-content">
+            <a href="#" class="flex items-center ps-2.5 mb-5 text-primary-content py-8">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
                 <span class="self-center text-xl font-semibold whitespace-nowrap ">Tienda Azul</span>
             </a>
             <ul class="space-y-2 font-medium text-primary-content">
+
                 <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
-                        <svg class="w-5 h-5 transition duration-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor" viewBox="0 0 22 21">
-                            <path
-                                d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                            <path
-                                d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                        </svg>
-                        <span class="ms-3">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
+                    <a href="#" class="flex btn  btn-info ">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                             <path
@@ -30,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
+                    <a href="#" class="flex btn  btn-info ">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path
@@ -41,7 +30,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
+                    <a href="#" class="flex btn  btn-info ">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                             <path
@@ -51,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
+                    <a href="#" class="flex btn  btn-info ">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                             <path
@@ -61,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
+                    <a href="#" class="flex btn  btn-info  ">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -71,7 +60,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-2 rounded-l group">
+                    <a href="#" class="flex btn  btn-info ">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-7" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
