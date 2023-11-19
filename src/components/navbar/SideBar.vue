@@ -55,17 +55,11 @@
                         <span class="flex-1 ms-3 whitespace-nowrap">Cerrar Sesión</span>
                     </RouterLink>
                 </li>
-
-                <li>
-                    <ThemeController />
-                </li>
-
             </ul>
         </div>
     </aside>
 </template>
 
 <script setup>
-import ThemeController from '../ThemeController.vue';
 
 </script>

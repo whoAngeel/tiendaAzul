@@ -1,7 +1,7 @@
 <template>
     <div class="navbar bg-primary">
 
-        <div class="flex-1">
+        <div class="flex-1 ml-4">
             <span class="text-2xl font-semibold text-base-100">{{ title }}</span>
 
         </div>
