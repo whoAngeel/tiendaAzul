@@ -29,7 +29,8 @@ export default {
                 "warning": "#ffcc00",
 
             "error": "#27374D",
-        },],
+            }
+        }],
     }
 
 }
