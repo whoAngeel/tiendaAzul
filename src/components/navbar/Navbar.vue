@@ -13,10 +13,11 @@
                     </div>
                 </label>
 
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52 ">
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52 ">
                     <ThemeController class="mt-4" />
                     <span class="text-center font-medium my-4 -mb-4">{{ username }}</span>
-                    <div class="divider"></div>
+                    <div class="divider "></div>
                     <li class="-mt-4">
                         <a>
                             Perfil
