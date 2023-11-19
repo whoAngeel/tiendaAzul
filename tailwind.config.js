@@ -9,7 +9,8 @@ export default {
     },
     plugins: [require("daisyui")],
     daisyui: {
-        themes: ["winter", "night", "tiendazul", {
+        themes: [{
+            "tiendazul": {
 
             "primary": "#27374D",
 
@@ -17,18 +18,18 @@ export default {
 
             "accent": "#9DB2BF",
 
-            "neutral": "#160004",
+                "neutral": "#16171d",
 
-            "base-100": "#fff5e5",
+                "base-100": "#FAF8ED",
 
-            "info": "#008bff",
+                "info": "#80B3FF",
 
-            "success": "#00c062",
+                "success": "#5cbc5f",
 
-            "warning": "#ffa700",
+                "warning": "#ffcc00",
 
             "error": "#27374D",
         },],
-    },
+    }
 
 }

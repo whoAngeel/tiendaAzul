@@ -1,5 +1,5 @@
 <template>
-    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40  h-screen  bg-primary" aria-label="Sidebar">
+    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40  h-screen bg-primary" aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto">
             <a href="#" class="flex items-center ps-2.5 mb-5 text-primary-content py-8">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
@@ -48,7 +48,16 @@
                     </RouterLink>
                 </li>
 
+                <li>
+                    <ThemeController />
+                </li>
+
             </ul>
         </div>
     </aside>
 </template>
+
+<script setup>
+import ThemeController from '../ThemeController.vue';
+
+</script>
