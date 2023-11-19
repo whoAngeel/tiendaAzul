@@ -9,13 +9,13 @@ export default {
     },
     plugins: [require("daisyui")],
     daisyui: {
-        themes: ["winter", "night", "tiendazul": {
+        themes: ["winter", "night", "tiendazul", {
 
-            "primary": "#00b8e4",
+            "primary": "#27374D",
 
-            "secondary": "#f99800",
+            "secondary": "#526D82",
 
-            "accent": "#00cb00",
+            "accent": "#9DB2BF",
 
             "neutral": "#160004",
 
@@ -27,7 +27,7 @@ export default {
 
             "warning": "#ffa700",
 
-            "error": "#fb4c6a",
+            "error": "#27374D",
         },],
     },
 
