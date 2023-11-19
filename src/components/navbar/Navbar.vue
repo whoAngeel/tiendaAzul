@@ -15,13 +15,13 @@
 
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52 ">
-                    <ThemeController class="mt-4" />
+
                     <span class="text-center font-medium my-4 -mb-4">{{ username }}</span>
                     <div class="divider "></div>
                     <li class="-mt-4">
-                        <a>
+                        <!-- <a>
                             Perfil
-                        </a>
+                        </a> -->
                     </li>
                     <li><a>Cerrar Sesión</a></li>
                 </ul>
@@ -32,7 +32,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import ThemeController from '../ThemeController.vue'
 
 const props = defineProps(['title'])
 const username = ref("mancha")
