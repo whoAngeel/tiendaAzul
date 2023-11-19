@@ -5,20 +5,20 @@
             <span class="text-2xl font-semibold text-base-100">{{ title }}</span>
 
         </div>
-        <div class="flex-none">
-            <div class="dropdown dropdown-end">
+        <div class="flex-none ">
+            <div class="dropdown dropdown-end ">
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img alt="Tailwind CSS Navbar component" src="http://placekitten.com/g/300/300" />
                     </div>
                 </label>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li>
-                        <ThemeController />
-                    </li>
-                    <li><a>{{ username }}</a></li>
-                    <li>
-                        <a class="justify-between">
+
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52 ">
+                    <ThemeController class="mt-4" />
+                    <span class="text-center font-medium my-4 -mb-4">{{ username }}</span>
+                    <div class="divider"></div>
+                    <li class="-mt-4">
+                        <a>
                             Perfil
                         </a>
                     </li>
@@ -36,3 +36,6 @@ import ThemeController from '../ThemeController.vue'
 const props = defineProps(['title'])
 const username = ref("mancha")
 </script>
+
+<style scoped>
+</style>

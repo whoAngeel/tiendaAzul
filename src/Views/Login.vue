@@ -25,7 +25,7 @@
               </label> -->
                 </div>
                 <div class="form-control mt-6">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" :disabled="isSubmitting">
                         <span class="loading loading-bars loading-xs" v-if="isSubmitting"></span>
                         <span v-else>Iniciar sesión</span>
                     </button>
