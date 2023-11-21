@@ -58,3 +58,11 @@ const logout = () => {
 }
 
 </script>
+
+<style scoped>
+li>.router-link-active {
+    background-color: #526D82;
+
+
+}
+</style>

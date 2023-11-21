@@ -1,6 +1,6 @@
 <template>
     <Navbar title="Inicio" />
-    <div class="h-full flex justify-center items-center content-center">Inicio</div>
+    <!-- <div class="h-full flex justify-center items-center content-center">Inicio</div> -->
 </template>
 
 <script setup>
