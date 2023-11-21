@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <RouterLink to="/productos" class="flex btn  btn-primary  ">
-                        <font-awesome-icon :icon="['fas', 'jar']" />
+                        <font-awesome-icon :icon="['fas', 'basket-shopping']" />
                         <span class="flex-1 ms-3 whitespace-nowrap">Productos</span>
                     </RouterLink>
                 </li>
