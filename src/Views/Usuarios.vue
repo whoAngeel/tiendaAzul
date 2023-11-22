@@ -1,6 +1,6 @@
 <template>
   <Navbar title="Usuarios" />
-  <Modal :show="showCreateModal" @close="toggleModal()">
+  <Modal :show="showCreateModal">
     <template #title>
       <h3 class="text-xl font-bold text-center">Registrar ususario</h3>
     </template>
@@ -16,7 +16,9 @@
     </template>
     <template #body>
       <!-- TODO aqui debe ir el formulario para crear un producot -->
-      <form>formulario</form>
+      
+        <CreateUser />
+
     </template>
   </Modal>
 
@@ -94,6 +96,7 @@ import Navbar from "../components/navbar/Navbar.vue";
 import Modal from "@/components/Modal.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useToggle } from "@vueuse/core";
+import CreateUser from "../components/forms/CreateUser.vue";
 
 const [showCreateModal, toggleModal] = useToggle();
 </script>
