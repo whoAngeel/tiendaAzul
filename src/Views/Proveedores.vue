@@ -1,6 +1,6 @@
 <template>
   <Navbar title="Proveedores" />
-  <Modal :show="showCreateModal" @close="toggleModal()">
+  <Modal :show="showCreateModal">
     <template #title>
       <h3 class="text-xl font-bold text-center">Registrar proveedor</h3>
     </template>
@@ -16,7 +16,8 @@
     </template>
     <template #body>
       <!-- TODO aqui debe ir el formulario para crear un producot -->
-      <form>formulario</form>
+      <CreateProveedor />
+      
     </template>
   </Modal>
 
@@ -46,6 +47,7 @@ import ProveedorCard from "../components/ProveedorCard.vue";
 import Modal from "@/components/Modal.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useToggle } from "@vueuse/core";
+import CreateProveedor from "../components/forms/CreateProveedor.vue";
 
 const [showCreateModal, toggleModal] = useToggle();
 </script>

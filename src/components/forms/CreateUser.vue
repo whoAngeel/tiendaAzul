@@ -115,7 +115,7 @@
 
 
 
-                            <div class="w-full px-4 pb-4 ml-auto text-gray-500 md:w-1/3">
+                            <div class="w-full px-4 pb-4 ml-auto text-gray-500 md:w-1/4">
                                 <button class="btn btn-primary" :disabled="isSubmitting">
                         <span class="loading loading-bars loading-xs" v-if="isSubmitting"></span>
                         <span v-else>Registrar</span>
