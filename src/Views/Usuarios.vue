@@ -99,4 +99,6 @@ import { useToggle } from "@vueuse/core";
 import CreateUser from "../components/forms/CreateUser.vue";
 
 const [showCreateModal, toggleModal] = useToggle();
+
+
 </script>

@@ -1,7 +1,7 @@
 <template>
     <Navbar title="Productos" />
 
-    <Modal :show="showCreateModal" @close="toggleModal()">
+    <Modal :show="showCreateModal" >
 
         <template #title>
             <h3 class="text-xl font-bold text-center">Crear nuevo producto</h3>
@@ -16,9 +16,7 @@
         </template>
         <template #body>
             <!-- TODO aqui debe ir el formulario para crear un producot -->
-            <form>
-                formulario
-            </form>
+            <CreateProduct />
 
         </template>
     </Modal>
@@ -103,6 +101,7 @@ import Navbar from "../components/navbar/Navbar.vue";
 import Modal from '@/components/Modal.vue'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useToggle } from '@vueuse/core'
+import CreateProduct from "../components/forms/CreateProduct.vue";
 
 const [showCreateModal, toggleModal] = useToggle()
 

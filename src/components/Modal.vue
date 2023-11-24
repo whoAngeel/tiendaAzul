@@ -1,6 +1,6 @@
 <template>
     <div ref="modal" v-if="show" class="fixed inset-0 flex items-center justify-center bg-slate-800 z-50 background">
-        <div class="bg-white w-80 p-4 rounded-lg shadow-lg sm:w-5/12 lg:w-4/12 md:6/12">
+        <div class="bg-white w-auto p-4 rounded-lg shadow-lg sm:w-6/12 lg:w-5/12 md:6/12">
             <slot class="" name="closeModal"></slot>
 
             <slot name="title"></slot>
