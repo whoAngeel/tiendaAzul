@@ -13,10 +13,7 @@
             </div>
         </template>
         <template #body>
-            <!-- TODO aqui debe ir el formulario para crear un producot -->
-
             <CreateUser @closeModal="toggleModal()" />
-
         </template>
     </Modal>
 
@@ -33,8 +30,24 @@
             </div>
         </template>
         <template #body>
-            <!-- TODO aqui debe ir el formulario para crear un producot -->
             <EditUsuario @closeModal="toggleModalEdit()" :usuario="usuario" />
+        </template>
+    </Modal>
+
+    <Modal :show="showDeleteModal">
+        <template #title>
+            <h3 class="text-xl font-bold text-center">Confirmar eliminar usuario</h3>
+        </template>
+        <template #closeModal>
+            <div class="relative">
+                <button class="btn btn-sm text-xl hover:text-2xl btn-circle btn-ghost absolute right-1 top-0"
+                    @click="toggleModalDelete()">
+                    <FontAwesomeIcon :icon="['fas', 'xmark']" />
+                </button>
+            </div>
+        </template>
+        <template #body>
+            <BorrarUsuario @closeModal="toggleModalDelete()" :usuario="usuario" />
         </template>
     </Modal>
 
@@ -84,7 +97,8 @@
                         <button class="btn btn-xs btn-info" @click="seleccionarUsuario(user.id)">Editar</button>
                     </th>
                     <th>
-                        <button class="btn btn-xs bg-red-500 text-slate-200">Borrar</button>
+                        <button class="btn btn-xs bg-red-500 text-slate-200"
+                            @click="seleccionarBorrar(user.id)">Borrar</button>
                     </th>
                 </tr>
                 <tr></tr>
@@ -112,6 +126,7 @@ import CreateUser from "../components/forms/crearUsuario.vue";
 import { useUsuariosStore } from '../stores/usuarios'
 import EditUsuario from "../components/forms/editUsuario.vue";
 import { computed, ref, toRef } from 'vue'
+import BorrarUsuario from "../components/forms/BorrarUsuario.vue";
 
 const usersStore = useUsuariosStore()
 
@@ -120,12 +135,18 @@ const usuario = ref({})
 
 const [showCreateModal, toggleModal] = useToggle();
 const [showEditModal, toggleModalEdit] = useToggle();
+const [showDeleteModal, toggleModalDelete] = useToggle()
 
 const seleccionarUsuario = (id) => {
     const selectedUser = usersStore.getUserById(id)
     toggleModalEdit()
     // console.log(selectedUser);
     usuario.value = selectedUser
+}
+
+const seleccionarBorrar = (id) => {
+    usuario.value = usersStore.getUserById(id)
+    toggleModalDelete()
 }
 
 </script>
