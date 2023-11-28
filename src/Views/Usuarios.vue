@@ -63,48 +63,53 @@
         </div>
     </div>
 
-    <div class="overflow-x-auto flex justify-center mt-4">
-        <table class="table w-3/4">
-            <!-- head -->
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
-                    <th>Rol</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- row 1 -->
-                <tr v-for="user in usuarios" :key="user.id">
-                    <td>
-                        <div class="flex items-center gap-3">
-                            <div class="avatar">
-                                <div class="mask mask-squircle w-12 h-12">
-                                    <img src="http://placekitten.com/g/300/300" alt="Avatar Tailwind CSS Component" />
+    <div>
+        <div class="text-3xl font-bold flex items-center justify-center content-center h-full mt-10"
+            v-if="usuarios.length === 0">
+            No se encuentran usuarios
+        </div>
+        <div v-else class="overflow-x-auto flex justify-center mt-4">
+            <table class="table w-3/4">
+                <!-- head -->
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- row 1 -->
+                    <tr v-for="user in usuarios" :key="user.id">
+                        <td>
+                            <div class="flex items-center gap-3">
+                                <div class="avatar">
+                                    <div class="mask mask-squircle w-12 h-12">
+                                        <img src="http://placekitten.com/g/300/300" alt="Avatar Tailwind CSS Component" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="font-bold">{{ user.nombre }} {{ user.apellido }}</div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="font-bold">{{ user.nombre }} {{ user.apellido }}</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>{{ user.telefono }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.rol }}</td>
-                    <th class="">
-                        <button class="btn btn-xs btn-info" @click="seleccionarUsuario(user.id)">Editar</button>
-                    </th>
-                    <th>
-                        <button class="btn btn-xs bg-red-500 text-slate-200"
-                            @click="seleccionarBorrar(user.id)">Borrar</button>
-                    </th>
-                </tr>
-                <tr></tr>
-            </tbody>
-            <!-- foot -->
-            <!-- <tfoot>
+                        </td>
+                        <td>{{ user.telefono }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.rol }}</td>
+                        <th class="">
+                            <button class="btn btn-xs btn-info" @click="seleccionarUsuario(user.id)">Editar</button>
+                        </th>
+                        <th>
+                            <button class="btn btn-xs bg-red-500 text-slate-200"
+                                @click="seleccionarBorrar(user.id)">Borrar</button>
+                        </th>
+                    </tr>
+                    <tr></tr>
+                </tbody>
+                <!-- foot -->
+                <!-- <tfoot>
                 <tr>
                     <th>Nombre</th>
                     <th>Teléfono</th>
@@ -113,7 +118,8 @@
                     <th></th>
                 </tr>
             </tfoot> -->
-        </table>
+            </table>
+        </div>
     </div>
 </template>
 
