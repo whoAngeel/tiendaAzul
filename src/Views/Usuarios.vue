@@ -20,6 +20,24 @@
         </template>
     </Modal>
 
+    <Modal :show="showEditModal">
+        <template #title>
+            <h3 class="text-xl font-bold text-center">Editar usuario</h3>
+        </template>
+        <template #closeModal>
+            <div class="relative">
+                <button class="btn btn-sm text-xl hover:text-2xl btn-circle btn-ghost absolute right-1 top-0"
+                    @click="toggleModalEdit()">
+                    <FontAwesomeIcon :icon="['fas', 'xmark']" />
+                </button>
+            </div>
+        </template>
+        <template #body>
+            <!-- TODO aqui debe ir el formulario para crear un producot -->
+            <EditUsuario @closeModal="toggleModalEdit()" :usuario="usuario" />
+        </template>
+    </Modal>
+
     <div class="flex justify-between w-3/4 mx-auto mt-4">
         <button class="btn flex items-center" @click="toggleModal()">
             <font-awesome-icon :icon="['fas', 'plus']" />Agregar
@@ -62,8 +80,11 @@
                     <td>{{ user.telefono }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.rol }}</td>
+                    <th class="">
+                        <button class="btn btn-xs btn-info" @click="seleccionarUsuario(user.id)">Editar</button>
+                    </th>
                     <th>
-                        <button class="btn btn-ghost btn-xs">details</button>
+                        <button class="btn btn-xs bg-red-500 text-slate-200">Borrar</button>
                     </th>
                 </tr>
                 <tr></tr>
@@ -89,12 +110,22 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useToggle } from "@vueuse/core";
 import CreateUser from "../components/forms/crearUsuario.vue";
 import { useUsuariosStore } from '../stores/usuarios'
+import EditUsuario from "../components/forms/editUsuario.vue";
+import { computed, ref, toRef } from 'vue'
 
 const usersStore = useUsuariosStore()
 
 const usuarios = usersStore.getUsuarios();
+const usuario = ref({})
 
 const [showCreateModal, toggleModal] = useToggle();
+const [showEditModal, toggleModalEdit] = useToggle();
 
+const seleccionarUsuario = (id) => {
+    const selectedUser = usersStore.getUserById(id)
+    toggleModalEdit()
+    // console.log(selectedUser);
+    usuario.value = selectedUser
+}
 
 </script>
