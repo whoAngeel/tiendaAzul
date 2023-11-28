@@ -40,9 +40,13 @@ export const useUsuariosStore = defineStore('usuariosStore', () => {
     }
 
     const deleteUser = (id) => {
-        const users = usuarios.filter(user => user.id != id)
-        usuarios = users
-        $toast.success("USuario eliminado")
+        const índiceUsuario = usuarios.findIndex((usuario) => usuario.id === id);
+
+        if (índiceUsuario !== -1) {
+            usuarios.splice(índiceUsuario, 1);
+        }
+        // usuarios = users
+        $toast.success("Usuario eliminado")
     }
 
     const getUserById = (id) => {
@@ -60,6 +64,8 @@ export const useUsuariosStore = defineStore('usuariosStore', () => {
         usuarios[userIndex] = updateUser
         $toast.success("Usuario actualizado")
     }
+
+
 
     return {
         usuarios,
