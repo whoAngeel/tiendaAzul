@@ -1,7 +1,7 @@
 <template>
     <Navbar title="Productos" />
 
-    <Modal :show="showCreateModal" >
+    <Modal :show="showCreateModal">
 
         <template #title>
             <h3 class="text-xl font-bold text-center">Crear nuevo producto</h3>
@@ -17,7 +17,6 @@
         <template #body>
             <!-- TODO aqui debe ir el formulario para crear un producot -->
             <CreateProduct />
-
         </template>
     </Modal>
 
