@@ -115,7 +115,6 @@ import { useToast } from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 import { useUsuariosStore } from '../../stores/usuarios'
 
-const $toast = useToast();
 const usersStore = useUsuariosStore()
 
 const rol = ref('')
