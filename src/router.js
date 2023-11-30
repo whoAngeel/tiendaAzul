@@ -6,6 +6,7 @@ import Productos from './Views/Productos.vue'
 import Usuarios from './Views/Usuarios.vue'
 import Ventas from './Views/Ventas.vue'
 import Proveedores from './Views/Proveedores.vue'
+import Caja from './Views/Caja.vue'
 
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
                 path: 'proveedores',
                 name: "Proveedores",
                 component: Proveedores
+            },
+            {
+                path: 'caja',
+                name: "Caja",
+                component: Caja
             }
         ]
     },
