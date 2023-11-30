@@ -7,10 +7,10 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="input max-w-xs w-full" v-bind="nombre" type="text">
+                <input class="input max-w-xs w-full" v-bind="Nombre" type="text">
                 <label class="label">
                     <span class="label-text-alt text-red-400">
-                        {{ errors.nombre }}
+                        {{ errors.Nombre }}
                     </span>
                 </label>
             </div>
@@ -22,10 +22,10 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="input max-w-xs w-full" v-bind="apellido" type="text">
+                <input class="input max-w-xs w-full" v-bind="Apellido" type="text">
                 <label class="label">
                     <span class="label-text-alt text-red-400">
-                        {{ errors.apellido }}
+                        {{ errors.Apellido }}
                     </span>
                 </label>
             </div>
@@ -37,10 +37,10 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="input max-w-xs w-full" v-bind="email" type="text">
+                <input class="input max-w-xs w-full" v-bind="Email" type="text">
                 <label class="label">
                     <span class="label-text-alt text-red-400">
-                        {{ errors.email }}
+                        {{ errors.Email }}
                     </span>
                 </label>
             </div>
@@ -52,10 +52,10 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="input max-w-xs w-full" v-bind="telefono" type="text">
+                <input class="input max-w-xs w-full" v-bind="Telefono" type="text">
                 <label class="label">
                     <span class="label-text-alt text-red-400">
-                        {{ errors.telefono }}
+                        {{ errors.Telefono }}
                     </span>
                 </label>
             </div>
@@ -67,7 +67,7 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <select class="select select-bordered w-full max-w-xs" v-model="rol">
+                <select class="select select-bordered w-full max-w-xs" v-model="Rol" id="Rol">
                     <option disabled value="">Selecciona uno</option>
                     <option>Vendedor</option>
                     <option>Administrador</option>
@@ -75,7 +75,7 @@
                 </select>
                 <label class="label">
                     <span class="label-text-alt text-red-400">
-                        {{ errors.rol }}
+                        {{ errors.Rol }}
                     </span>
                 </label>
             </div>
@@ -87,10 +87,10 @@
                 </label>
             </div>
             <div class="md:w-2/3">
-                <input class="input max-w-xs w-full" type="password" v-bind="password" placeholder="**************">
+                <input class="input max-w-xs w-full" type="password" v-bind="Contraseña" placeholder="**************">
                 <label class="label">
                     <span class="label-text-alt text-red-400">
-                        {{ errors.password }}
+                        {{ errors.Contraseña }}
                     </span>
                 </label>
             </div>
@@ -123,26 +123,26 @@ const emits = defineEmits(['closeModal'])
 
 const { defineInputBinds, handleSubmit, errors, isSubmitting } = useForm({
     validationSchema: yup.object({
-        nombre: yup.string().min(3).required(),
-        apellido: yup.string().min(3).required(),
-        email: yup.string().email('Invalid Email').required(),
-        telefono: yup.number().required(),
+        Nombre: yup.string().min(3).required(),
+        Apellido: yup.string().min(3).required(),
+        Email: yup.string().email('Invalid Email').required(),
+        Telefono: yup.number().required(),
         // rol: yup.string().required(),
-        password: yup.string().required()
+        Contraseña: yup.string().required()
     })
 })
 
-const nombre = defineInputBinds("nombre")
-const apellido = defineInputBinds("apellido")
-const email = defineInputBinds("email")
-const telefono = defineInputBinds('telefono')
-// const rol = defineInputBinds("rol")
-const password = defineInputBinds('password')
+const Nombre = defineInputBinds("Nombre")
+const Apellido = defineInputBinds("Apellido")
+const Email = defineInputBinds("Email")
+const Telefono = defineInputBinds('Telefono')
+//const Rol = defineInputBinds("Rol")
+const Contraseña = defineInputBinds('Contraseña')
 
 const onSubmit = handleSubmit((values) => {
     console.log("creando");
-    const usuario = { ...values, rol: rol.value };
-
+    const usuario = { ...values, Rol: Rol.value};
+    //alert(usuario)
     usersStore.addUser(usuario)
     emits('closeModal')
 })

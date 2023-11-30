@@ -13,7 +13,7 @@
             </div>
         </template>
         <template #body>
-            <CreateUser @closeModal="toggleModal()" />
+            <CrearUsuario @closeModal="toggleModal()" />
         </template>
     </Modal>
 
@@ -85,19 +85,14 @@
                     <tr v-for="user in usuarios" :key="user.id">
                         <td>
                             <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="mask mask-squircle w-12 h-12">
-                                        <img src="http://placekitten.com/g/300/300" alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
                                 <div>
-                                    <div class="font-bold">{{ user.nombre }} {{ user.apellido }}</div>
+                                    <div class="font-bold">{{ user.Nombre }} {{ user.Apellido }}</div>
                                 </div>
                             </div>
                         </td>
-                        <td>{{ user.telefono }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.rol }}</td>
+                        <td>{{ user.Telefono }}</td>
+                        <td>{{ user.Email }}</td>
+                        <td>{{ user.Rol }}</td>
                         <th class="">
                             <button class="btn btn-xs btn-info" @click="seleccionarUsuario(user.id)">Editar</button>
                         </th>
@@ -133,6 +128,7 @@ import { useUsuariosStore } from '../stores/usuarios'
 import EditUsuario from "../components/forms/editUsuario.vue";
 import { computed, ref, toRef } from 'vue'
 import BorrarUsuario from "../components/forms/BorrarUsuario.vue";
+import CrearUsuario from "../components/forms/crearUsuario.vue";
 
 const usersStore = useUsuariosStore()
 

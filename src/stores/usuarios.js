@@ -2,48 +2,45 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useToast } from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
+import axios from 'axios';
 
 const $toast = useToast();
 
 export const useUsuariosStore = defineStore('usuariosStore', () => {
-    let currentuserId = 2
-    const usuarios = [
-        {
-            id: 1,
-            nombre: 'Juan',
-            apellido: 'García',
-            email: 'juan.perez@example.com',
-            telefono: '123456789',
-            rol: 'Vendedor',
-            password: '123456',
-        },
-        {
-            id: 2,
-            nombre: 'María',
-            apellido: 'Sánchez',
-            email: 'maria.lopez@example.com',
-            telefono: '987654321',
-            rol: 'Administrador',
-            password: '123456',
-        },
-    ];
 
-    const getUsuarios = () => {
-        return usuarios
+    var usuarios= [];
+
+    const getUsuarios =  () => {
+            axios
+              .get('http://localhost:8000/api/Usuarios')
+              .then(response => (usuarios = response.data))
+      return usuarios
     }
 
     const addUser = (user) => {
-        currentuserId++
-        user.id = currentuserId
+        
+        axios.post('http://localhost:8000/api/Usuarios',user).then(response=>(
+            $toast.success('Usuario agregado')
+            )).catch(error => {
+                alert(error)
+          })
         usuarios.push(user)
-        $toast.success('Usuario agregado')
+        //$toast.success('Usuario agregado')
     }
 
-    const deleteUser = (id) => {
+    const deleteUser = (id) => {///no existe el metodo
         const índiceUsuario = usuarios.findIndex((usuario) => usuario.id === id);
 
         if (índiceUsuario !== -1) {
             usuarios.splice(índiceUsuario, 1);
+            axios.delete('http://localhost:8000/api/Usuarios/'+índiceUsuario)
+            .then(response => {
+              console.log(response.data);
+            })
+            .catch(error => {
+              console.log(error);
+              alert(error)
+            });
         }
         // usuarios = users
         $toast.success("Usuario eliminado")
