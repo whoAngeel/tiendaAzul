@@ -148,6 +148,7 @@ const seleccionarUsuario = (id) => {
 
 const seleccionarBorrar = (id) => {
     usuario.value = usersStore.getUserById(id)
+    //alert(usuario.value)
     toggleModalDelete()
 }
 

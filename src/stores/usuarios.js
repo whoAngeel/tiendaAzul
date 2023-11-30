@@ -33,9 +33,9 @@ export const useUsuariosStore = defineStore('usuariosStore', () => {
 
         if (índiceUsuario !== -1) {
             usuarios.splice(índiceUsuario, 1);
-            axios.delete('http://localhost:8000/api/Usuarios/'+índiceUsuario)
+            axios.delete('http://localhost:8000/api/Usuarios/'+id)
             .then(response => {
-              console.log(response.data);
+                $toast.success("Usuario eliminado")
             })
             .catch(error => {
               console.log(error);
@@ -43,11 +43,12 @@ export const useUsuariosStore = defineStore('usuariosStore', () => {
             });
         }
         // usuarios = users
-        $toast.success("Usuario eliminado")
+        //$toast.success("Usuario eliminado")
     }
 
     const getUserById = (id) => {
-        const user = usuarios.find(user => user.id === id)
+        var user = usuarios.find(user => user.id === id)
+        //alert(user)
         return user
     }
 
