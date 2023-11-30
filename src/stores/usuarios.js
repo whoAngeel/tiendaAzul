@@ -20,11 +20,12 @@ export const useUsuariosStore = defineStore('usuariosStore', () => {
     const addUser = (user) => {
         
         axios.post('http://localhost:8000/api/Usuarios',user).then(response=>(
+            usuarios.push(user),
             $toast.success('Usuario agregado')
             )).catch(error => {
                 alert(error)
           })
-        usuarios.push(user)
+        
         //$toast.success('Usuario agregado')
     }
 
@@ -58,9 +59,17 @@ export const useUsuariosStore = defineStore('usuariosStore', () => {
             $toast.error("Usuario no encontrado")
             return
         } // usuario no encontrado
+        axios.put(`http://localhost:8000/api/Usuarios/${id}`, changes)
+            .then(response => {
+                $toast.success("Usuario actualizado")
+            })
+            .catch(error => {
+              console.log(error);
+              alert(error)
+            });
         const updateUser = Object.assign({}, usuarios[userIndex], changes)
         usuarios[userIndex] = updateUser
-        $toast.success("Usuario actualizado")
+        //$toast.success("Usuario actualizado")
     }
 
 
